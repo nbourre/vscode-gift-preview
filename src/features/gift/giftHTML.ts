@@ -305,7 +305,8 @@ function formatText(giftText: Text): string {
       return marked(formatText)
         .trim()
         .replace(/(?:\\r\\n|\\r|\\n)/g, "<br>")
-        .replace(/(^<p>)(.*?)(<\/p>)$/gm, "$2");
+        .replace(/(^<p>)(.*?)(<\/p>)$/gm, "$2")
+        .replace(/@@PLUGINFILE@@/g, "");
     default:
       return ``;
   }
